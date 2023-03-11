@@ -1,0 +1,313 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="font-futura bg-slate-100" style="background-image: url('bg.svg'); background-size: cover;">
+    <!-- Menu -->
+    <div class="sticky opacity-95 top-0 z-50 w-full text-gray-700 bg-white shadow">
+        <div x-data="{ open: false }" class="flex flex-col px-5 mx-auto max-w-screen-xl md:items-center md:justify-between md:flex-row">
+            <div class="flex flex-row items-center justify-between py-4">
+                <a href="#" class="text-xl text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
+                    <h1 class="text-sm lg:text-base leading-tight tracking-tight font-tavolga">
+                        РОССИЙСКО-<br class="hidden lg:block">ИНДИЙСКИЙ<br>
+                        ФОРУМ</h1>
+                </a>
+                <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 gap-2 md:pb-0 md:flex md:justify-end md:flex-row">
+                <label for="registration-modal" class="rif-navbar-menu_item cursor-pointer">Регистрация</label>
+                <a class="rif-navbar-menu_item" href="#conception">Концепция</a>
+                <a class="rif-navbar-menu_item" href="#schedule">Программа</a>
+                <a class="rif-navbar-menu_item" href="#participation">Условия участия</a>
+                <a class="rif-navbar-menu_item" href="#contacts">Контакты</a>
+                <a class="rif-navbar-menu_item bg-rif-red" href="/en">ENGLISH</a>
+            </nav>
+        </div>
+    </div>
+    <!-- End Menu -->
+    <!-- Content -->
+    <div class="px-5 py-10 mx-auto max-w-screen-xl space-y-6 lg:space-y-10">
+        <!-- Hero -->
+        <div class="bg-slate-300 rounded-lg bg-[url('ryazan.jpg')] bg-no-repeat bg-right bg:cover lg:bg-contain">
+            <div class="min-h-full hero rounded-lg lg:bg-[url('hero-bg.svg')]">
+                <div class="hero-overlay bg-white bg-opacity-10 shadow rounded-lg"></div>
+                <div class="flex flex-col p-6 lg:p-10 hero-content justify-start place-items-start text-center lg:text-left">
+                    <div class="lg:w-4/5">
+                        <div class="mb-5 text-2xl text-gray-600 p-2 bg-white bg-opacity-80 rounded inline-block lg:bg-opacity-0">
+                            Международный форум местных властей и бизнеса
+                        </div>
+                        <h1 class="mb-5 text-3xl font-semibold text-white font-tavolga uppercase text-gray-800 lg:text-6xl">
+                            «Россия и&nbsp;Индия – одна&nbsp;дорога в&nbsp;будущее»
+                        </h1>
+                        <div class="mb-5 text-xl lg:text-3xl bg-white lg:bg-opacity-0 bg-opacity-80 p-2 rounded text-gray-700">
+                            6-7&nbsp;июня 2023&nbsp;года, Рязань
+                        </div>
+                        <label for="registration-modal" class="cursor-pointer inline-block border border-2 border-gray-50 uppercase font-bold mt-10 rounded-lg px-4 py-6 border-transparent bg-white w-full lg:w-auto text-rif-red text-lg lg:text-3xl text-center">Зарегистрироваться</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End  Hero-->
+        <!-- Forum Presentation -->
+        <div class="bg-rif-green bg-opacity-90 rounded-lg p-6 lg:p-10 flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-4/5 text-white space-y-6">
+                <div class="text-xl lg:text-4xl leading-tight">
+                    Международный форум местных властей и бизнеса «Россия и Индия — одна дорога в будущее» состоится 6–7 июня 2023 г. в городе Рязани и будет сфокусирован на развитии двусторонних партнерств России и Индии на региональном и муниципальном уровнях с участием национального бизнеса.
+                </div>
+                <div class="text-3xl lg:text-5xl opacity-90 leading-tight">Уважаемые коллеги и друзья, приглашаем Вас принять личное участие в Форуме!</div>
+            </div>
+            <div class="lg:w-1/5">
+                <a href="https://cdn.urc.ru/events/2023/rusindforum/rusindforum-ru.pdf" target="_blank">
+                    <div class="hidden lg:block lg:pb-6"><img class="opacity-90" src="file-pdf-solid.svg"></div>
+                    <div class="p-4 rounded-md uppercase border-transparent bg-rif-red w-full lg:w-auto font-bold ">Скачать<br>Презентацию Форума</div>
+                </a>
+            </div>
+        </div>
+        <!-- End Forum Presentation -->
+        <!-- Organisers -->
+        <div class="flex flex-row gap-8 bg-white rounded-lg p-6 lg:p-10 shadow">
+            <div class="space-y-6 w-full">
+                <div class="text-4xl">
+                    Организаторы
+                </div>
+                <div class="grid lg:grid-cols-3 gap-y-6">
+                    <div class="flex flex-col items-center">
+                        <img class="block h-36 pb-2" src="urc.svg">
+                        <p>Союз российскиx городов</p>
+                    </div>
+                    <div class="flex flex-1 flex-col items-center">
+                        <img class="block pb-2 h-36" src="Coat_of_arms_of_Ryazan_Oblast.svg">
+                        <p>Правительство Рязанской области </p>
+                    </div>
+                    <div class="flex flex-1 flex-col items-center">
+                        <img class="block pb-2 h-36" src="soltex.png">
+                        <p>Солтекс Групп</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Organisers -->
+        <!-- Participants -->
+        <div class="bg-rif-orange bg-opacity-90 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+            <div class="lg:w-4/5 text-white space-y-6">
+                <div class="text-4xl lg:text-6xl text-gray-700">
+                    Участники
+                </div>
+                <div class="text-xl lg:text-3xl opacity-90 text-gray-700">
+                    <ul class="list-disc list-inside">
+                        <li>Местные и региональные власти</li>
+                        <li>Представители МИД и их представительств в регионах России</li>
+                        <li>Представители бизнеса и их структуры (ТПП, ассоциации и др.)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Participants-->
+        <!-- Conception -->
+        <div id="conception" class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/qC2n6RQU4Vw/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTQ0NjY4&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-rif-blue bg-opacity-95 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+                <div class="text-white space-y-6">
+                    <div class="text-4xl lg:text-6xl">
+                        Концепция
+                    </div>
+                    <div class="text-xl lg:text-3xl opacity-90 space-y-6 leading-tight">
+                        <p> Форум объединит на одной площадке более 30 представителей бизнеса Индии, инвесторов из разных регионов страны и представителей торгово-промышленной палаты Индии.</p>
+                        <p>Характерные особенности форума — выстраивание горизонтальных связей между местными властями и заинтересованным бизнесом; формирование дружественных стратегических партнерств на долгосрочную перспективу не только в бизнесе, но и в вопросах публичной дипломатии; создание «хабов российско-индийского» сотрудничества на муниципальных территориях Российской Федерации. Особое внимание будет уделено вопросам превращения форума в постоянно действующий публичный инструмент масштабирования двустороннего сотрудничества между двумя странами, обмена информацией, делегациями из числа представителей местных властей и бизнеса, включая обмен экспертами в интересующих российские и индийские города областях, а также совместную продуктивную работу в международных организациях БРИКС, ШОС и др. </p>
+                        <p>Текущее состояние российско-индийского сотрудничества характеризуется в первую очередь существенным ростом торгово-экономического компонента, при этом сохраняется ряд диспропорций в таком сотрудничестве, связанных с преобладанием энергетического импорта из России. Сейчас актуально развивать взаимодействие и по другим отраслям, а именно агропромышленному комплексу, химической, пищевой и легкой промышленности, производству строительных материалов, машиностроению и приборостроению, медицине и многим другим. Выходом из такой ситуации видится в диверсификации торгово-экономического оборота и развитию взаимного доверия на местном уровне. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Conception -->
+        <!-- Architecture -->
+        <div id="schedule" class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/3fPXt37X6UQ/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTA4Nzkx&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-slate-600 p-6 lg:p-10 bg-opacity-80 rounded-lg flex flex-row gap-8 shadow-sm">
+                <div class="space-y-6">
+                    <div class="text-4xl lg:text-6xl text-white">
+                        Архитектура программы
+                    </div>
+                    <div class="text-xl lg:text-3xl text-white space-y-6">
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-6 lg:pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-4xl">
+                            6 июня (первый день)
+                        </div>
+                        <ul>
+                            <li>09:00-10:00 <span class="font-semibold">Регистрация</span></li>
+                            <li>10:00-10:30 Открытие выставки</li>
+                            <li>10:30-13:00 Презентация индийских компаний</li>
+                            <li>13:00-14:00 Обед</li>
+                            <li>14:00-16:00 Презентация российских регионов, городов, компаний</li>
+                            <li>16:00-18:30 Посещение индустриального парка «Рязанский»</li>
+                            <li>19:00-21:00 Ужин</li>
+                        </ul>
+                        <div class="divider"></div>
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-6 lg:pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-4xl">
+                            7 июня (второй день)
+                        </div>
+                        <ul>
+                            <li>09:00-10:00 Бизнес завтрак (по приглашению)</li>
+                            <li>10:00-11:00 VIP презентация выставки, кофе-брейк и B-2-B Networking</li>
+                            <li>11:00-13:00 Пленарная сессия и подписание соглашений</li>
+                            <li>13:00-14:00 Обед</li>
+                            <li>14:00-18:00 Посещение инвестиционных площадок Рязанской области или экскурсия в Константиново </li>
+                            <li>19:00-22:00 Товарищеский ужин</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Architecture -->
+        <!-- Participation -->
+        <div id="participation" class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/ewGMqs2tmJI/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTQ2MzQx&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-rif-blue bg-opacity-80 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+                <div class="space-y-6">
+                    <div class="flex flex-col lg:flex-row justify-between space-y-3">
+                        <div class="text-4xl lg:text-6xl text-white">
+                            Условия участия
+                        </div>
+                        <span class="text-xl lg:text-4xl inline-block text-white bg-rif-red lg:p-4 w-full lg:w-auto rounded-r-lg lg:rounded-lg -ml-6 lg:ml-10 pl-6">
+                            Участие в форуме бесплатное
+                        </span>
+                    </div>
+                    <div class="text-xl lg:text-3xl text-white space-y-6">
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-3xl text-gray-600">
+                            Организаторы предоставляют:
+                        </div>
+                        <ul class="list-disc list-inside leading-tight">
+                            <li>Трансфер в отель с ж/д вокзала Рязани и обратно</li>
+                            <li>Трансфер между рабочими площадками форума</li>
+                            <li>Набор участника</li>
+                            <li>Участие в B2B переговорах с индийским бизнесом</li>
+                            <li>Презентация города, региона, компании (по согласованию)</li>
+                            <li>Питание на время проведения форумной программы (кофе-брейки, обеды, ужин, торжественный ужин в день закрытия)</li>
+                            <li>Экскурсионная программа</li>
+                            <li>Фото- и видеоотчет</li>
+                            <li>Посещение рязанских инвестиционных площадок</li>
+                        </ul>
+                        <div class="pt-5"></div>
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-3xl text-gray-600">
+                            Участники оплачивают:
+                        </div>
+                        <ul class="list-disc list-inside leading-tight">
+                            <li>Билеты до г. Рязань и обратно</li>
+                            <li>Проживание в отеле «Старый город»</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Participation -->
+        <!-- Hotel -->
+        <div class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/Fk9d0cxYqC4/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTQ5NjU3&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-slate-900 bg-opacity-60 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+                <div class="text-white space-y-6">
+                    <div class="text-4xl lg:text-6xl text-white">
+                        Проживание
+                    </div>
+                    <div class="text-2xl lg:text-3xl opacity-90 space-y-6">
+                        Для Вашего удобства Вы можете осуществить бронирование отеля «<a href="https://hotel-oldtown.ru/" target="_blank" class="underline underline-offset-2">Старый&nbsp;город</a>» по специальным ценам. Забронировать отель и выбрать категорию номера вы можете при регистрации
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Hotel -->
+        <!-- Contacts -->
+        <div id="contacts" class="m-auto max-w-screen-xl">
+            <div id="contacts" class="pb-5 text-3xl text-center text-gray-900 lg:text-6xl">
+                Контакты
+            </div>
+            <p class="text-xl text-center">
+                Дирекция Союза российских городов будет рада ответить на все Ваши вопросы
+            </p>
+            <p class="text-xl text-center">
+                Наш адрес для корреспонденции:
+                121099 Москва, Карманицкий пер., д. 10
+            </p>
+            <div class="pt-5 grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div class="text-center bg-white shadow card">
+                    <figure class="px-10 pt-10">
+                        <img src="spodnevskaya.jpg" class="mask mask-circle">
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="text-2xl font-semibold">Анна
+                            Сподневская<br>
+                        </h2>
+                        <p class="pb-5 text-lg text-gray-900">Менеджер департамента по
+                            работе с участниками
+                        </p>
+                        <p class="pt-3 text-lg text-gray-700 border-t-2 border-gray-100">
+                            +7 929 608-8025<br>
+                            info@urc.ru
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center bg-white shadow card">
+                    <figure class="px-10 pt-10">
+                        <img src="cepkova.jpg" class="mask mask-circle">
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="text-2xl font-semibold">Светлана
+                            Цепкова<br>
+                        </h2>
+                        <p class="pb-5 text-lg text-gray-900">Менеджер департамента по
+                            работе с участниками
+                        </p>
+                        <p class="pt-3 text-lg text-gray-700 border-t-2 border-gray-100">
+                            +7 925 331-8233<br>
+                            info@urc.ru
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center bg-white shadow card">
+                    <figure class="px-10 pt-10">
+                        <img src="gritsun.jpg" class="mask mask-circle">
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="text-2xl font-semibold">Иван Грицун<br>
+                        </h2>
+                        <p class="pb-5 text-lg text-gray-900">Заместитель Генерального
+                            директора<br>&nbsp;</p>
+                        <p class="pt-3 text-lg text-gray-700 border-t-2 border-gray-100">
+                            +7 925 507-0831<br>
+                            info@urc.ru
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Contacts -->
+        <!-- Footer -->
+        <footer class="p-4 footer bg-base-300 text-base-content footer-center rounded-lg">
+            <div>
+                <p class="text-lg leading-tight">Международный форум местных властей и бизнеса
+                    «Россия и Индия – одна дорога в будущее»
+                </p>
+                <p>
+                    6-7 июня 2023 года, Рязань
+                </p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+    <input type="checkbox" id="registration-modal" class="modal-toggle" />
+    <label for="registration-modal" class="modal cursor-pointer">
+        <label class="modal-box relative space-y-6" for="">
+            <h3 class="text-lg font-bold text-center">Выберите тип регистрации</h3>
+            <a href="https://forms.gle/vZXkiLiqq913Dd3f8" target="_blank" class="py-4 btn w-full">Для представителей городов, регионов, экспертов</a>
+            <a href="https://forms.gle/k68bKM3nNc9MpG5GA" target="_blank" class="py-4 btn w-full">Для представителей бизнеса</a>
+        </label>
+    </label>
+    <!-- End Content -->
+</body>
+
+</html>
