@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="font-futura bg-slate-100" style="background-image: url('bg.svg'); background-size: cover;">
+    <!-- Menu -->
+    <div class="sticky opacity-95 top-0 z-50 w-full text-gray-700 bg-white shadow">
+        <div x-data="{ open: false }" class="flex flex-col px-5 mx-auto max-w-screen-xl md:items-center md:justify-between md:flex-row">
+            <div class="flex flex-row items-center justify-between py-4">
+                <a href="#" class="text-xl text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
+                    <h1 class="text-sm lg:text-base leading-tight tracking-tight font-tavolga">
+                        RUSSIAN-<br class="hidden lg:block">INDIAN<br>
+                        FORUM</h1>
+                </a>
+                <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 gap-2 md:pb-0 md:flex md:justify-end md:flex-row">
+                <label for="registration-modal" class="rif-navbar-menu_item cursor-pointer">Registration</label>
+                <a class="rif-navbar-menu_item" href="#conception">Concept</a>
+                <a class="rif-navbar-menu_item" href="#schedule">Agenda</a>
+                <a class="rif-navbar-menu_item" href="#participation">Participation</a>
+                <a class="rif-navbar-menu_item" href="#contacts">Contacts</a>
+                <a class="rif-navbar-menu_item bg-rif-red" href="/">РУССКИЙ</a>
+            </nav>
+        </div>
+    </div>
+    <!-- End Menu -->
+    <!-- Content -->
+    <div class="px-5 py-10 mx-auto max-w-screen-xl space-y-6 lg:space-y-10">
+        <!-- Hero -->
+        <div class="bg-slate-300 rounded-lg bg-[url('ryazan.jpg')] bg-no-repeat bg-right bg:cover lg:bg-contain">
+            <div class="min-h-full hero rounded-lg lg:bg-[url('hero-bg.svg')]">
+                <div class="hero-overlay bg-white bg-opacity-10 shadow rounded-lg"></div>
+                <div class="flex flex-col p-6 lg:p-10 hero-content justify-start place-items-start text-center lg:text-left">
+                    <div class="lg:w-4/5">
+                        <div class="mb-5 text-2xl text-gray-600 p-2 bg-white bg-opacity-80 rounded inline-block lg:bg-opacity-0">
+                            The International Forum of Local Authorities and Business
+                        </div>
+                        <h1 class="mb-5 text-3xl font-semibold text-white font-tavolga uppercase text-gray-800 lg:text-6xl">
+                            "Russia and&nbsp;India - one&nbsp;road to&nbsp;the&nbsp;future"
+                        </h1>
+                        <div class="mb-5 text-xl lg:text-3xl bg-white lg:bg-opacity-0 bg-opacity-80 p-2 rounded text-gray-700">
+                            June 6-7, 2023 // Ryazan, Russian Federation
+                        </div>
+                        <label for="registration-modal" class="cursor-pointer inline-block border border-2 border-gray-50 uppercase font-bold mt-10 rounded-lg px-4 py-6 border-transparent bg-white w-full lg:w-auto text-rif-red text-lg lg:text-3xl text-center">Registration</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End  Hero-->
+        <!-- Forum Presentation -->
+        <div class="bg-rif-green bg-opacity-90 rounded-lg p-6 lg:p-10 flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-4/5 text-white space-y-6">
+                <div class="text-xl lg:text-4xl leading-tight">
+                    The International Forum of Local Authorities and Business "Russia and India - one road to the future" will be held on June 6-7, 2023 in the city of Ryazan and will be focused on the development of bilateral partnerships between Russia and India at the regional and local levels with the participation of national business.
+                </div>
+                <div class="text-3xl lg:text-5xl opacity-90 leading-tight">Dear colleagues and friends, we invite you to come in Russia and participate in the Forum!</div>
+            </div>
+            <div class="lg:w-1/5">
+                <a href="https://cdn.urc.ru/events/2023/rusindforum/rusindforum-en.pdf" target="_blank">
+                    <div class="hidden lg:block lg:pb-6"><img class="opacity-90" src="file-pdf-solid.svg"></div>
+                    <div class="p-4 rounded-md uppercase border-transparent bg-rif-red w-full lg:w-auto font-bold ">Download<br>Forum presentation</div>
+                </a>
+            </div>
+        </div>
+        <!-- End Forum Presentation -->
+        <!-- Organisers -->
+        <div class="flex flex-row gap-8 bg-white rounded-lg p-6 lg:p-10 shadow">
+            <div class="space-y-6 w-full">
+                <div class="text-4xl">
+                    Hosts
+                </div>
+                <div class="grid lg:grid-cols-3 gap-y-6">
+                    <div class="flex flex-col items-center">
+                        <img class="block h-36 pb-2" src="urc.svg">
+                        <p>Union of Russian cities</p>
+                    </div>
+                    <div class="flex flex-1 flex-col items-center">
+                        <img class="block pb-2 h-36" src="Coat_of_arms_of_Ryazan_Oblast.svg">
+                        <p>Government of the Ryazan region</p>
+                    </div>
+                    <div class="flex flex-1 flex-col items-center">
+                        <img class="block pb-2 h-36" src="soltex.png">
+                        <p>Soltex Group</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Organisers -->
+        <!-- Participants -->
+        <div class="bg-rif-orange bg-opacity-90 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+            <div class="lg:w-4/5 text-white space-y-6">
+                <div class="text-4xl lg:text-6xl text-gray-700">
+                    Participants
+                </div>
+                <div class="text-xl lg:text-3xl opacity-90 text-gray-700">
+                    <ul class="list-disc list-inside">
+                        <li>Local and regional authorities</li>
+                        <li>Representatives of the Ministry of Foreign Affairs and their representative offices in the regions of Russia</li>
+                        <li>Business representatives and their structures (CCI, associations, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Participants-->
+        <!-- Conception -->
+        <div id="conception" class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/qC2n6RQU4Vw/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTQ0NjY4&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-rif-blue bg-opacity-95 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+                <div class="text-white space-y-6">
+                    <div class="text-4xl lg:text-6xl">
+                        Concept
+                    </div>
+                    <div class="text-xl lg:text-3xl opacity-90 space-y-6 leading-tight">
+                        <p>The forum will bring together more than 30 Indian business representatives, investors from different regions of the country and representatives of the Indian Chamber of Commerce and Industry on one platform.</p>
+                        <p>The defining aspects of the forum are the building of horizontal ties between local authorities and interested businesses; developing of friendly strategic partnerships for the long term, not only in business, but also in public diplomacy; creation of "hubs of Russian-Indian" cooperation in the cities and areas of the Russian Federation. Particular attention will be paid to the issues of turning the forum into a permanent public tool for scaling up bilateral cooperation between the two countries, exchange of information, delegations from among representatives of local authorities and business, including the exchange of experts in areas of interest to Russian and Indian cities, as well as joint productive work in international organizations BRICS, SCO, etc.</p>
+                        <p>The current state of Russian-Indian cooperation is primarily characterized by a significant growth in the trade and economic component, while a number of disproportions in such cooperation remain, associated with the predominance of energy imports from Russia. Now it is important to develop cooperation in other sectors, specifically in the agro-industrial complex, the chemical, food and light industries, the production of building materials, mechanical engineering and instrumentation, medicine and many others. The way out of this situation is seen in the diversification of trade and economic turnover and the development of mutual trust at the local level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Conception -->
+        <!-- Architecture -->
+        <div id="schedule" class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/3fPXt37X6UQ/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTA4Nzkx&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-slate-600 p-6 lg:p-10 bg-opacity-80 rounded-lg flex flex-row gap-8 shadow-sm">
+                <div class="space-y-6">
+                    <div class="text-4xl lg:text-6xl text-white">
+                        Structure of the Forum’s agenda
+                    </div>
+                    <div class="text-xl lg:text-3xl text-white space-y-6">
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-6 lg:pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-4xl">
+                            June 6 (First day)
+                        </div>
+                        <ul>
+                            <li>09:00-10:00 Registration</li>
+                            <li>10:00-10:30 Exhibition opening</li>
+                            <li>10:30-13:00 Presentation of Indian companies</li>
+                            <li>13:00-14:00 Lunch</li>
+                            <li>14:00-16:00 Presentation of Russian regions, cities and companies</li>
+                            <li>16:00-18:30 Visit to the industrial park "Ryazansky"</li>
+                            <li>19:00-21:00 Dinner</li>
+                        </ul>
+                        <div class="divider"></div>
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-6 lg:pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-4xl">
+                            June 7 (second day)
+                        </div>
+                        <ul>
+                            <li>09:00-10:00 Business breakfast (by invitation)</li>
+                            <li>10:00-11:00 VIP presentation of the exhibition, coffee break and B-2-B Networking</li>
+                            <li>11:00-13:00 Plenary session and signing of agreements</li>
+                            <li>13:00-14:00 Lunch</li>
+                            <li>14:00-18:00 Visiting investment sites of the Ryazan region or excursion to Konstantinovo</li>
+                            <li>19:00-22:00 Friendly dinner</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Architecture -->
+        <!-- Participation -->
+        <div id="participation" class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/ewGMqs2tmJI/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTQ2MzQx&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-rif-blue bg-opacity-80 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+                <div class="space-y-6">
+                    <div class="flex flex-col lg:flex-row justify-between space-y-3">
+                        <div class="text-4xl lg:text-6xl text-white">
+                            The terms of participation
+                        </div>
+                        <span class="text-xl lg:text-4xl inline-block text-white bg-rif-red lg:p-4 w-full lg:w-auto rounded-r-lg lg:rounded-lg -ml-6 lg:ml-10 pl-6">
+                            Participation in the forum is free
+                        </span>
+                    </div>
+                    <div class="text-xl lg:text-3xl text-white space-y-6">
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-3xl text-gray-600">
+                            Organizers provide:
+                        </div>
+                        <ul class="list-disc list-inside leading-tight">
+                            <li>Transfer to the hotel from Moscow airports to the hotel in Ryazan city and back</li>
+                            <li>Transfer between working sites of the forum</li>
+                            <li>Set of the participant</li>
+                            <li>Exhibition stand for presenting your company (size 3-2 meters, TV with a diagonal of more than 45 inches, laptop, clicker, space for advertising products)</li>
+                            <li>Opportunity to speak within the forum</li>
+                            <li>Participation in B2B negotiations with Russian business</li>
+                            <li>Special meals for the duration of the forum program (coffee breaks, lunches, dinner, gala dinner on the closing day</li>
+                            <li>Excursion program</li>
+                            <li>Visiting Ryazan investment sites</li>
+                            <li>Photo and videoreport</li>
+                        </ul>
+                        <div class="pt-5"></div>
+                        <div class="bg-white inline-block p-2 -ml-6 lg:-ml-10 pl-10 px-10 bg-opacity-20 rounded-r-lg text-2xl lg:text-3xl text-gray-600">
+                            Participants pay for:
+                        </div>
+                        <ul class="list-disc list-inside leading-tight">
+                            <li>Air tickets to Moscow and back</li>
+                            <li>Accommodation in the hotel "Old Town"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Participation -->
+        <!-- Hotel -->
+        <div class="bg-slate-300 rounded-lg" style="background-image: url('https://unsplash.com/photos/Fk9d0cxYqC4/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjc4NTQ5NjU3&force=true&w=2400'); background-size: cover; background-position: center;">
+            <div class="bg-slate-900 bg-opacity-60 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
+                <div class="text-white space-y-6">
+                    <div class="text-4xl lg:text-6xl text-white">
+                        Accommodation
+                    </div>
+                    <div class="text-2xl lg:text-3xl opacity-90 space-y-6">
+                        For your convenience, you can book the hotel "<a href="https://hotel-oldtown.ru/" target="_blank" class="underline underline-offset-2">Old Town</a>" at special prices. You can book a hotel and choose a room category at the registration
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Hotel -->
+        <!-- Contacts -->
+        <div id="contacts" class="m-auto max-w-screen-xl">
+            <div id="contacts" class="pb-5 text-3xl text-center text-gray-900 lg:text-6xl">
+                Contacts
+            </div>
+            <p class="text-xl text-center">
+                The Union of Russian Cities will be happy to answer all your questions
+            </p>
+            <p class="text-xl text-center">
+                E-mail: info@urc.ru<br>
+                Mob.: +7 925 507-0831
+            </p>
+        </div>
+        <!-- End Contacts -->
+        <!-- Footer -->
+        <footer class="p-4 footer bg-base-300 text-base-content footer-center rounded-lg">
+            <div>
+                <p class="text-lg leading-tight">The International Forum of Local Authorities and Business
+                    "Russia and India - one road to the future"
+                </p>
+                <p>
+                    June 6-7, 2023 // Ryazan, Russian Federation
+                </p>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+    <input type="checkbox" id="registration-modal" class="modal-toggle" />
+    <label for="registration-modal" class="modal cursor-pointer">
+        <label class="modal-box relative space-y-6" for="">
+            <h3 class="text-lg font-bold text-center">Choose registration type</h3>
+            <a href="https://forms.gle/uZ7Wr4MTTTnzMvpW8" target="_blank" class="py-4 btn w-full">For representatives of regional and local authorities</a>
+            <a href="https://forms.gle/Xf3GN6Sb4gTMkian8" target="_blank" class="py-4 btn w-full">For business representatives</a>
+        </label>
+    </label>
+    <!-- End Content -->
+</body>
+
+</html>
