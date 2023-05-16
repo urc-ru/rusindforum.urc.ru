@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/style.css" rel="stylesheet">
+    <link href="/style.css?3" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
@@ -27,7 +27,7 @@
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 gap-2 md:pb-0 md:flex md:justify-end md:flex-row">
                 <label for="registration-modal" class="rif-navbar-menu_item cursor-pointer">Registration</label>
-                <a class="rif-navbar-menu_item" href="#conception">Concept</a>
+                <a class="rif-navbar-menu_item" href="#concept">Concept</a>
                 <a class="rif-navbar-menu_item" href="#schedule">Agenda</a>
                 <a class="rif-navbar-menu_item" href="#participation">Participation</a>
                 <a class="rif-navbar-menu_item" href="#contacts">Contacts</a>
@@ -79,7 +79,7 @@
                 <div class="grid lg:grid-cols-4 gap-y-6">
                     <div class="flex flex-col items-center">
                         <img class="block h-36 pb-2" src="urc.svg">
-                        <p>Union of Russian cities</p>
+                        <p>Union of Russian Cities</p>
                     </div>
                     <div class="flex flex-1 flex-col items-center">
                         <img class="block pb-2 h-36" src="Coat_of_arms_of_Ryazan_Oblast.svg">
@@ -113,8 +113,8 @@
             </div>
         </div>
         <!-- End Participants-->
-        <!-- Conception -->
-        <div id="conception" class="bg-slate-300 rounded-lg" style="background-image: url('conception-bg.jpg'); background-size: cover; background-position: center;">
+        <!-- Concept -->
+        <div id="concept" class="bg-slate-300 rounded-lg" style="background-image: url('conception-bg.jpg'); background-size: cover; background-position: center;">
             <div class="bg-rif-blue bg-opacity-95 rounded-lg p-6 lg:p-10 flex flex-row gap-8 shadow-sm">
                 <div class="text-white space-y-6">
                     <div class="text-4xl lg:text-4xl">
@@ -128,7 +128,26 @@
                 </div>
             </div>
         </div>
-        <!-- End Conception -->
+        <!-- End Concept -->
+        <!-- Investment potential -->
+        <div id="investment" class="bg-rif-red rounded-lg border-2">
+            <a href="investment-potential.pdf" target="_blank">    
+            <div class="bg-opacity-95 rounded-lg p-6 lg:p-8 flex flex-col md:flex-row gap-8 shadow-sm">
+                    <div class="text-3xl lg:text-4xl my-auto">
+                        <img src="ryazan-logo.svg"class="h-28" />
+                    </div>
+                    <div class="my-auto">
+                        <div class="text-3xl lg:text-5xl">
+                            INVESTMENT POTENTIAL OF THE RYAZAN REGION
+                        </div>
+                        <div class="text- text-xl lg:text-3xl">
+                            Download presentation (PDF)
+                        </div>
+                    </div>
+            </div>
+            </a>
+        </div>
+        <!-- End Investment potential -->
         <!-- Agenda -->
         <div id="schedule" class="bg-slate-300 rounded-lg" style="background-image: url('agenda-bg.jpg'); background-size: cover; background-position: center;">
             <div class="bg-slate-600 p-6 lg:p-10 bg-opacity-80 rounded-lg flex flex-row gap-8 shadow-sm">
